@@ -17,7 +17,7 @@ set t_Co=256
 " スワップファイルの作成先を変更
 set noswapfile
 " ヤンクをクリップボードへ繋ぐ
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 " ビープ音を消す
 set belloff=all
 " 行番号系
@@ -68,10 +68,13 @@ inoremap <silent> jj <ESC>
 "--------------------------------------------------------------
 let g:ale_fixers = {
 \  '*': ['remove_trailing_lines', 'trim_whitespace'],
-\  'javascript': ['prettier'],
-\  'typecript': ['prettier'],
-\  'vue': ['prettier'],
+\  'javascript': ['eslint'],
+\  'typecript': ['eslint'],
+\  'vue': ['eslint'],
 \}
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 
