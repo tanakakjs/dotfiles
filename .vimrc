@@ -90,6 +90,16 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 "let g:deoplete#enable_at_startup = 1
 
 "--------------------------------------------------------------
+"           補完                                            <<<
+"--------------------------------------------------------------
+" 補完表示時のEnterで改行をしない
+inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
+
+set completeopt=menuone,noinsert
+inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
+inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
+
+"--------------------------------------------------------------
 "          colorScheme                                      <<<
 "--------------------------------------------------------------
 colorscheme molokai " カラースキームにmolokaiを設定する
